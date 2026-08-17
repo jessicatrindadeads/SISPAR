@@ -85,22 +85,26 @@ const formularioInicial = {
 function Solicitacao() {
   const [formulario, setFormulario] = useState(formularioInicial);
   const [solicitacoes, setSolicitacoes] = useState(solicitacoesIniciais);
+  const [mensagem, setMensagem] = useState("");
 
   const atualizarCampo = (evento) => {
     const { name, value } = evento.target;
     setFormulario((estadoAtual) => ({ ...estadoAtual, [name]: value }));
+    setMensagem("");
   };
 
   const salvarSolicitacao = (evento) => {
     evento.preventDefault();
 
-    if (
-      !formulario.nome.trim() ||
-      !formulario.empresa.trim() ||
-      !formulario.data ||
-      !formulario.tipoDespesa ||
-      !formulario.centroCusto
-    ) {
+    const camposObrigatoriosPreenchidos =
+      formulario.nome.trim() &&
+      formulario.empresa.trim() &&
+      formulario.data &&
+      formulario.tipoDespesa &&
+      formulario.centroCusto;
+
+    if (!camposObrigatoriosPreenchidos) {
+      setMensagem("Preencha os campos obrigatórios antes de salvar a solicitação.");
       return;
     }
 
@@ -108,13 +112,21 @@ function Solicitacao() {
       ...listaAtual,
       { ...formulario, id: Date.now() },
     ]);
+
     setFormulario(formularioInicial);
+    setMensagem("Solicitação adicionada com sucesso.");
   };
 
   const excluirSolicitacao = (id) => {
     setSolicitacoes((listaAtual) =>
       listaAtual.filter((solicitacao) => solicitacao.id !== id)
     );
+    setMensagem("Solicitação removida com sucesso.");
+  };
+
+  const limparFormulario = () => {
+    setFormulario(formularioInicial);
+    setMensagem("Formulário limpo.");
   };
 
   const totalFaturado = useMemo(
@@ -159,8 +171,14 @@ function Solicitacao() {
             formulario={formulario}
             onChange={atualizarCampo}
             onSubmit={salvarSolicitacao}
-            onLimpar={() => setFormulario(formularioInicial)}
+            onLimpar={limparFormulario}
           />
+
+          {mensagem && (
+            <p role="status" aria-live="polite">
+              {mensagem}
+            </p>
+          )}
 
           <TabelaSolicitacoes
             solicitacoes={solicitacoes}
