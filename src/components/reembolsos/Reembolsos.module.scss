@@ -1,156 +1,156 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-.containerReembolsos{
+.containerReembolsos {
   display: flex;
-  
+  min-height: 100vh;
+  font-family: Inter, sans-serif;
 }
 
+.containerReembolsos > div:last-child {
+  flex: 1;
+  min-width: 0;
+}
 
-header {
-  width: 9vw;
-  height: 5vh;
-  display: flex; 
-  justify-content: space-evenly;
+.containerReembolsos header {
+  min-height: 56px;
+  display: flex;
+  gap: 0.5rem;
   align-items: center;
-  font-family: Inter;
-  font-weight: 400;
   color: #23282f;
+  padding: 0 1.5rem;
 }
 
 .mainReembolsos {
-  
   display: flex;
   flex-direction: column;
-  justify-content: center;  
-  align-items: center ;
-  width: 80vw;
-  height: 95vh;  
- 
-  h1{  
-  font-size: 2rem;  
-  color: #000000;
-  font-weight: 700;  
-  font-family: Inter;
-  width: 46.5vw;
-  height: 4vh;  
-  }
-  
-  .pReembolsos{       
-    font-size: 1rem;
-    font-family: Inter;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+
+  h1 {
+    width: min(100%, 900px);
+    font-size: 2rem;
     color: #000000;
-    font-weight: 400;     
-    font-family: Inter;       
-    padding-top: 1rem;
-    width: 46.5vw;
-    height: 4vh;     
-   
+    font-weight: 700;
+    margin: 0;
   }
- 
+
+  .pReembolsos {
+    width: min(100%, 900px);
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 400;
+    padding-top: 1rem;
+  }
 }
 
 .containerCards {
-  display: flex;
-  justify-content: space-evenly; 
-  height: 23vh;
-  width: 49vw;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 1rem;
+  width: min(100%, 900px);
   margin-top: 2rem;
-  color: #cbd4e1;
-    
 }
 
-article {
-  border: solid #CBD4E1;
-  width: 15vw;
-  height: 23vh;
+.containerCards article {
+  border: 1px solid #cbd4e1;
+  min-height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #23282f;
-  font-family: Inter;
   border-radius: 6px;
   gap: 8px;
-  
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .containerStatus {
-  display: flex;
-  width: 47vw;
-  height: 10vh;  
-  justify-content: space-evenly;
-  align-items: center;
-  border: solid #CBD4E1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: min(100%, 900px);
+  gap: 1rem;
+  border: 1px solid #cbd4e1;
   margin-top: 2rem;
   border-radius: 6px;
-    
+  padding: 1rem;
+  box-sizing: border-box;
+
   .divImagens {
-    width: 8vw;
-    height: 4vh;   
     display: flex;
-    justify-content: space-between;
+    gap: 0.5rem;
+    justify-content: center;
     align-items: center;
 
-    p{
-      font-weight: 400;      
-      font-family: Inter;
+    p,
+    h3 {
       color: #23282f;
-      }
-      h3{
-      font-weight: 700;      
-      font-family: Inter;
-      color: #23282f;
-    }  
+      margin: 0;
+    }
+
+    h3 {
+      font-weight: 700;
+    }
   }
 }
 
-.imgSolicitados{
-  background-color: #00bedd;
+.imgSolicitados,
+.imgAnalises,
+.imgAprovados,
+.imgRejeitados {
   border-radius: 6px;
   padding: 5px;
-  width: 1.25vw;
-  height: 2.63vh;
-  
+  width: 24px;
+  height: 24px;
 }
 
-.imgAnalises{
-  background-color: #E56700;
-  border-radius: 6px;
-  padding: 5px;
-  width: 1.25vw;
-  height: 2.63vh;
-  
-}
+.imgSolicitados { background-color: #00bedd; }
+.imgAnalises { background-color: #e56700; }
+.imgAprovados { background-color: #007a6a; }
+.imgRejeitados { background-color: #a60b2f; }
 
-.imgAprovados{
-  background-color:#007A6A ;
-  border-radius: 6px;
-  padding: 5px;
-  width: 1.25vw;
-  height: 2.63vh;
-}
+.divSistema {
+  width: min(100%, 900px);
+  padding-top: 2rem;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 
-.imgRejeitados{
-  background-color: #A60B2F;
-  border-radius: 6px;
-  padding: 5px;
-  width: 1.25vw;
-  height: 2.63vh;
-}
-.divSistema{
-  padding-top: 2rem; 
-  padding-right: 45rem;  
-  display: flex;  
-  gap:8px;
-  
-  h2{
-    font-family: Inter;  
-    font-size: 16px;
-    height: 5vh;
+  h2 {
+    font-size: 1rem;
     font-weight: 400;
-    color: #0844c4;     
+    color: #0844c4;
+    margin: 0;
   }
-  img{    
-  height: 1.8vh;
+
+  img {
+    height: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .containerCards {
+    grid-template-columns: 1fr;
+  }
+
+  .containerStatus {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .mainReembolsos {
+    padding: 1rem;
+  }
+
+  .mainReembolsos h1 {
+    font-size: 1.6rem;
+  }
+
+  .containerStatus {
+    grid-template-columns: 1fr;
   }
 }
