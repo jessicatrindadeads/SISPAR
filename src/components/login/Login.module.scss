@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+.loginPage {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .containerLogin {
   display: flex;
   align-items: center;
@@ -100,7 +106,11 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  .loginPage {
+    display: block;
+  }
+
   .containerLogin {
     display: none;
   }
