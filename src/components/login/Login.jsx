@@ -34,7 +34,7 @@ function Login() {
   };
 
   return (
-    <main>
+    <main className={styles.loginPage}>
       <section className={styles.containerLogin}>
         <img src={Capa} alt="Navio cargueiro" />
       </section>
