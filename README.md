@@ -4,7 +4,7 @@ Interface web desenvolvida para simular um **sistema corporativo de solicitaçã
 
 O projeto foi desenvolvido com foco em **React, componentização, navegação entre páginas, organização de estilos com SCSS Modules e responsividade**.
 
-> Este repositório representa, atualmente, a camada **front-end** da aplicação. Os dados exibidos são demonstrativos, e esta versão não possui autenticação nem persistência de dados no back-end.
+> Este repositório representa, atualmente, a camada **front-end** da aplicação. Os dados iniciais exibidos são demonstrativos, e esta versão não possui autenticação nem persistência de dados no back-end.
 
 ---
 
@@ -14,8 +14,11 @@ O projeto foi desenvolvido com foco em **React, componentização, navegação e
 - Dashboard de reembolsos
 - Indicadores visuais de solicitações
 - Tela de solicitação de reembolso
-- Formulário com dados de despesas e centro de custo
-- Tabela demonstrativa de solicitações
+- Formulário controlado com React
+- Inclusão dinâmica de novas solicitações na tabela
+- Exclusão de solicitações
+- Cálculo automático do total faturado e do total de despesas
+- Campos obrigatórios para os principais dados da solicitação
 - Navegação entre páginas com React Router
 - Estrutura organizada em componentes
 
@@ -86,12 +89,10 @@ Projeto **front-end** funcional e em evolução.
 
 ### Próximas melhorias planejadas
 
-- Gerenciamento do estado do formulário
-- Inclusão dinâmica de solicitações na tabela
-- Cálculo automático dos totais
-- Validação dos campos do formulário
+- Exibição de mensagens de validação no formulário
 - Melhorias de acessibilidade
 - Revisão da responsividade
+- Refatoração da tela de solicitação em componentes menores
 - Deploy da aplicação
 
 ---
@@ -101,10 +102,12 @@ Projeto **front-end** funcional e em evolução.
 Durante o desenvolvimento deste projeto, foram praticados conceitos de:
 
 - Componentização em React
-- Organização de aplicações front-end
+- Gerenciamento de estado com `useState`
+- Derivação de valores com `useMemo`
+- Manipulação de formulários controlados
+- Renderização dinâmica de listas
 - Navegação com React Router
 - Estilização com SCSS Modules
-- Construção de formulários
 - Estruturação de interfaces corporativas
 - Versionamento com Git e GitHub
 
