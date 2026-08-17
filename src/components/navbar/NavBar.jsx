@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./NavBar.module.scss";
 import Historico from "../../assets/Header/Botão - Histórico.png";
 import Home from "../../assets/Header/botão - Home.png";
@@ -6,64 +8,69 @@ import Reembolso from "../../assets/Header/Botão - Reembolso.png";
 import Sair from "../../assets/Header/Botão - Sair.png";
 import Perfil from "../../assets/Header/image.png";
 import Fechar from "../../assets/Header/imagem-fechar-header.png";
-import { useNavigate } from "react-router-dom";
 
 function NavBar() {
   const navigate = useNavigate();
+  const [recolhida, setRecolhida] = useState(false);
+
+  const informarFuncionalidadeDemonstrativa = (funcionalidade) => {
+    window.alert(`${funcionalidade} ainda não está disponível nesta versão demonstrativa.`);
+  };
 
   return (
-    <nav className={styles.navBarEstilo}>
-      <button>
-        <img src={Fechar} alt="imagem abrir e fechar" />
+    <nav className={`${styles.navBarEstilo} ${recolhida ? styles.navBarRecolhida : ""}`}>
+      <button
+        type="button"
+        onClick={() => setRecolhida((estadoAtual) => !estadoAtual)}
+        aria-label={recolhida ? "Expandir menu" : "Recolher menu"}
+        title={recolhida ? "Expandir menu" : "Recolher menu"}
+      >
+        <img src={Fechar} alt="" aria-hidden="true" />
       </button>
 
       <section>
-        <img src={Perfil} alt="imagem do perfil" />
+        {!recolhida && <img src={Perfil} alt="Perfil do usuário" />}
 
         <div className={styles.boxButton}>
-          <button
-            onClick={() => {
-              navigate("/reembolsos");
-            }}
-          >
-            <img src={Home} alt="imagem Home" />
+          <button type="button" onClick={() => navigate("/reembolsos")} aria-label="Início" title="Início">
+            <img src={Home} alt="" aria-hidden="true" />
+          </button>
+
+          <button type="button" onClick={() => navigate("/solicitacao")} aria-label="Solicitar reembolso" title="Solicitar reembolso">
+            <img src={Reembolso} alt="" aria-hidden="true" />
           </button>
 
           <button
-            onClick={() => {
-              navigate("/solicitacao");
-            }}
+            type="button"
+            onClick={() => informarFuncionalidadeDemonstrativa("A pesquisa")}
+            aria-label="Pesquisar"
+            title="Pesquisar"
           >
-            <img src={Reembolso} alt="imagem Reembolso" />
+            <img src={Pesquisa} alt="" aria-hidden="true" />
           </button>
 
           <button
-            onClick={() => {
-              navigate("/reembolsos");
-            }}
+            type="button"
+            onClick={() => informarFuncionalidadeDemonstrativa("O histórico")}
+            aria-label="Histórico"
+            title="Histórico"
           >
-            <img src={Pesquisa} alt="imagem Pesquisa" />
-          </button>
-
-          <button
-            onClick={() => {
-              navigate("/solicitacao");
-            }}
-          >
-            <img src={Historico} alt="imagem Reembolso" />
+            <img src={Historico} alt="" aria-hidden="true" />
           </button>
         </div>
       </section>
 
       <button
+        type="button"
         className={styles.buttonSair}
-        onClick={() => {
-          navigate("/");
-        }}
+        onClick={() => navigate("/")}
+        aria-label="Sair"
+        title="Sair"
       >
-        <img src={Sair} alt="imagem sair" />
+        <img src={Sair} alt="" aria-hidden="true" />
       </button>
     </nav>
   );
 }
+
 export default NavBar;
