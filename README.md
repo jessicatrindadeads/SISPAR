@@ -10,7 +10,8 @@ O projeto foi desenvolvido com foco em **React, componentização, navegação e
 
 ## 🚀 Funcionalidades
 
-- Tela de login com navegação para o sistema
+- Tela de login com formulário controlado e validação básica
+- Validação de e-mail antes do acesso ao dashboard
 - Dashboard de reembolsos
 - Indicadores visuais de solicitações
 - Tela de solicitação de reembolso
@@ -18,9 +19,11 @@ O projeto foi desenvolvido com foco em **React, componentização, navegação e
 - Inclusão dinâmica de novas solicitações na tabela
 - Exclusão de solicitações
 - Cálculo automático do total faturado e do total de despesas
-- Campos obrigatórios para os principais dados da solicitação
+- Validação dos principais campos obrigatórios
+- Mensagens de feedback para ações do formulário
 - Navegação entre páginas com React Router
 - Estrutura organizada em componentes
+- Recursos básicos de acessibilidade com labels e atributos ARIA
 
 ---
 
@@ -48,6 +51,11 @@ src/
 │   ├── navbar/
 │   ├── reembolsos/
 │   └── solicitacao/
+│       ├── FormularioSolicitacao.jsx
+│       ├── ResumoSolicitacao.jsx
+│       ├── Solicitacao.jsx
+│       ├── Solicitacao.module.scss
+│       └── TabelaSolicitacoes.jsx
 ├── App.jsx
 ├── global.scss
 └── main.jsx
@@ -89,10 +97,9 @@ Projeto **front-end** funcional e em evolução.
 
 ### Próximas melhorias planejadas
 
-- Exibição de mensagens de validação no formulário
-- Melhorias de acessibilidade
 - Revisão da responsividade
-- Refatoração da tela de solicitação em componentes menores
+- Refinamento visual das mensagens de feedback
+- Testes da interface e dos principais fluxos
 - Deploy da aplicação
 
 ---
@@ -105,9 +112,13 @@ Durante o desenvolvimento deste projeto, foram praticados conceitos de:
 - Gerenciamento de estado com `useState`
 - Derivação de valores com `useMemo`
 - Manipulação de formulários controlados
+- Validação de formulários
+- Renderização condicional
 - Renderização dinâmica de listas
+- Comunicação entre componentes por props
 - Navegação com React Router
 - Estilização com SCSS Modules
+- Acessibilidade básica em formulários
 - Estruturação de interfaces corporativas
 - Versionamento com Git e GitHub
 
