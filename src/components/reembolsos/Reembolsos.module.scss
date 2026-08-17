@@ -45,6 +45,13 @@
   }
 }
 
+.mensagemDashboard {
+  width: min(100%, 900px);
+  margin-top: 1rem;
+  color: #0844c4;
+  font-weight: 600;
+}
+
 .containerCards {
   display: grid;
   grid-template-columns: repeat(3, minmax(180px, 1fr));
@@ -53,7 +60,7 @@
   margin-top: 2rem;
 }
 
-.containerCards article {
+.cardAcao {
   border: 1px solid #cbd4e1;
   min-height: 180px;
   display: flex;
@@ -61,11 +68,28 @@
   justify-content: center;
   align-items: center;
   color: #23282f;
+  background-color: #ffffff;
   border-radius: 6px;
   gap: 8px;
   text-align: center;
   padding: 1rem;
   box-sizing: border-box;
+  cursor: pointer;
+  font-family: Inter, sans-serif;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.cardAcao:hover,
+.cardAcao:focus-visible {
+  transform: translateY(-2px);
+  border-color: #0844c4;
+  box-shadow: 0 6px 18px rgba(35, 40, 47, 0.12);
+  outline: none;
+}
+
+.cardAcao h2 {
+  margin: 0;
+  font-size: 1.1rem;
 }
 
 .containerStatus {
