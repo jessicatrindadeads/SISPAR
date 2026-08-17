@@ -2,9 +2,9 @@
 
 Interface web desenvolvida para simular um **sistema corporativo de solicitação e acompanhamento de reembolsos**.
 
-O projeto foi construído com foco em **React, componentização, navegação entre páginas, organização de estilos com SCSS Modules e responsividade**.
+O projeto foi desenvolvido com foco em **React, componentização, navegação entre páginas, organização de estilos com SCSS Modules e responsividade**.
 
-> Este repositório representa atualmente a camada **Front-end** da aplicação. Os dados exibidos são demonstrativos e não há autenticação ou persistência em Back-end nesta versão.
+> Este repositório representa, atualmente, a camada **front-end** da aplicação. Os dados exibidos são demonstrativos, e esta versão não possui autenticação nem persistência de dados no back-end.
 
 ---
 
@@ -13,11 +13,11 @@ O projeto foi construído com foco em **React, componentização, navegação en
 - Tela de login com navegação para o sistema
 - Dashboard de reembolsos
 - Indicadores visuais de solicitações
-- Tela para solicitação de reembolso
+- Tela de solicitação de reembolso
 - Formulário com dados de despesas e centro de custo
 - Tabela demonstrativa de solicitações
 - Navegação entre páginas com React Router
-- Estrutura de componentes reutilizáveis
+- Estrutura organizada em componentes
 
 ---
 
@@ -82,14 +82,14 @@ npm run dev
 
 ## 📌 Status do projeto
 
-Projeto Front-end funcional em evolução.
+Projeto **front-end** funcional e em evolução.
 
 ### Próximas melhorias planejadas
 
-- Gerenciamento de estado do formulário
+- Gerenciamento do estado do formulário
 - Inclusão dinâmica de solicitações na tabela
 - Cálculo automático dos totais
-- Validações de formulário
+- Validação dos campos do formulário
 - Melhorias de acessibilidade
 - Revisão da responsividade
 - Deploy da aplicação
@@ -98,7 +98,7 @@ Projeto Front-end funcional em evolução.
 
 ## 💡 Aprendizados
 
-Durante o desenvolvimento deste projeto foram praticados conceitos de:
+Durante o desenvolvimento deste projeto, foram praticados conceitos de:
 
 - Componentização em React
 - Organização de aplicações front-end
