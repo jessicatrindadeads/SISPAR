@@ -3,7 +3,7 @@ import styles from "./Solicitacao.module.scss";
 
 function FormularioSolicitacao({ formulario, onChange, onSubmit, onLimpar }) {
   return (
-    <form className={styles.formSolicitacao} onSubmit={onSubmit}>
+    <form className={styles.formSolicitacao} onSubmit={onSubmit} noValidate>
       <div className={styles.grupo1}>
         <div className={styles.inputNome}>
           <label htmlFor="nome">Nome Completo</label>
@@ -85,17 +85,17 @@ function FormularioSolicitacao({ formulario, onChange, onSubmit, onLimpar }) {
 
         <div className={styles.inputValorKm}>
           <label htmlFor="valorKm">Valor/Km</label>
-          <input type="number" step="0.01" id="valorKm" name="valorKm" value={formulario.valorKm} onChange={onChange} />
+          <input type="number" step="0.01" min="0" id="valorKm" name="valorKm" value={formulario.valorKm} onChange={onChange} />
         </div>
 
         <div className={styles.inputFaturamento}>
           <label htmlFor="valorFaturado">Val. Faturado</label>
-          <input type="number" step="0.01" id="valorFaturado" name="valorFaturado" value={formulario.valorFaturado} onChange={onChange} />
+          <input type="number" step="0.01" min="0" id="valorFaturado" name="valorFaturado" value={formulario.valorFaturado} onChange={onChange} />
         </div>
 
         <div className={styles.inputDespesa}>
           <label htmlFor="despesa">Despesa</label>
-          <input type="number" step="0.01" id="despesa" name="despesa" value={formulario.despesa} onChange={onChange} />
+          <input type="number" step="0.01" min="0" id="despesa" name="despesa" value={formulario.despesa} onChange={onChange} />
         </div>
 
         <div className={styles.salvarDeletar}>
