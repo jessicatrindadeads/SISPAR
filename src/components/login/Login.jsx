@@ -33,6 +33,10 @@ function Login() {
     navigate("/reembolsos");
   };
 
+  const informarFuncionalidadeDemonstrativa = (funcionalidade) => {
+    setMensagem(`${funcionalidade} ainda não está disponível nesta versão demonstrativa.`);
+  };
+
   return (
     <main className={styles.loginPage}>
       <section className={styles.containerLogin}>
@@ -68,12 +72,16 @@ function Login() {
           />
 
           {mensagem && (
-            <p role="alert" aria-live="assertive">
+            <p role="status" aria-live="polite">
               {mensagem}
             </p>
           )}
 
-          <button type="button" className={styles.linkRecuperarSenha}>
+          <button
+            type="button"
+            className={styles.linkRecuperarSenha}
+            onClick={() => informarFuncionalidadeDemonstrativa("A recuperação de senha")}
+          >
             Esqueci minha senha
           </button>
 
@@ -81,7 +89,11 @@ function Login() {
             <button type="submit" className={styles.buttonEntrar}>
               Entrar
             </button>
-            <button type="button" className={styles.buttonCriar}>
+            <button
+              type="button"
+              className={styles.buttonCriar}
+              onClick={() => informarFuncionalidadeDemonstrativa("A criação de conta")}
+            >
               Criar conta
             </button>
           </div>
