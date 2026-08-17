@@ -1,297 +1,298 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-.layoutSolicitacao{
-    display: flex;
+.layoutSolicitacao {
+  display: flex;
+  min-height: 100vh;
+  font-family: Inter, sans-serif;
 }
 
-.containerPrincipalSolicitacao{
-     width: 95vw;
+.containerPrincipalSolicitacao {
+  flex: 1;
+  min-width: 0;
 }
 
-.headerSolicitacao{
-    width: 20vw;
-    height: 10vh;
-    display: flex; 
-    justify-content: space-evenly;
-    align-items: center;
-    font-family: Inter;
-    font-weight: 400;
-    color: #23282f;   
+.headerSolicitacao {
+  min-height: 56px;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: #23282f;
+  padding: 0 1.5rem;
+  flex-wrap: wrap;
 }
 
-.mainSolicitacao{
-width: 95vw;
-flex-direction: column;
-display: flex;
-padding-right: 2rem;
+.mainSolicitacao {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1.5rem 2rem;
+  box-sizing: border-box;
+  overflow-x: auto;
 }
 
-.formSolicitacao{
-display: flex;    
-width: 95vw;
-justify-content: space-between;
-
-}
-.grupo1{
- 
-    width: 40vw;
-    height: 20vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+.formSolicitacao {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) 1px minmax(360px, 1.25fr);
+  gap: 1.5rem;
+  width: 100%;
+  align-items: start;
 }
 
-input, select, textarea{
-    border-radius: 6px;
-    border: solid #CBD4E1 0.8px;
-    height: 4vh;
-    width: 100%;    
-    font-weight: 700;
-    align-items:flex-start;
-    text-align: justify;
+.grupo1,
+.grupo2 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-items: end;
 }
 
-label{
-    color: #23282F;
-    font-weight: 700;
-    font-size: 1rem;
-    border-color: #CBD4E1;
+.grupo1 input,
+.grupo1 select,
+.grupo1 textarea,
+.grupo2 input,
+.grupo2 select,
+.grupo2 textarea,
+.inputTotalFaturado input,
+.inputTotalDespesa input {
+  border-radius: 6px;
+  border: 1px solid #cbd4e1;
+  min-height: 40px;
+  width: 100%;
+  font-weight: 600;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
 
-.inputNome{
-   width: 15vw;
-   font-family: Inter;
-   font-weight: 700;
-   font-size: 16px;
-   
-   
+.grupo1 textarea,
+.grupo2 textarea {
+  min-height: 88px;
+  resize: vertical;
 }
 
-.inputEmpresa{
-    width: 10vw;
-    font-family: Inter;
-   font-weight: 700;
-   font-size: 16px;
-    
+.grupo1 label,
+.grupo2 label,
+.inputTotalFaturado label,
+.inputTotalDespesa label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #23282f;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
-.inputPrestacao{   
-   width: 10vw;
-   font-family: Inter;
-   font-weight: 700;
-   font-size: 16px;
+.inputNome { grid-column: span 5; }
+.inputEmpresa { grid-column: span 3; }
+.inputPrestacao { grid-column: span 4; }
+.inputMotivo { grid-column: 1 / -1; }
+.inputData { grid-column: span 3; }
+.despesas { grid-column: span 4; }
+.custo { grid-column: span 5; }
+.inputOrdem,
+.inputDiv,
+.inputPep,
+.inputMoeda,
+.inputDistanciaKm,
+.inputValorKm { grid-column: span 2; }
+.inputFaturamento,
+.inputDespesa { grid-column: span 3; }
+.salvarDeletar { grid-column: span 4; }
+
+.barraVertical {
+  width: 1px;
+  background-color: #cbd4e1;
+  min-height: 220px;
 }
 
-.inputMotivo{   
-    width: 100vw;
-    font-family: Inter;
-   font-weight: 700;
-   font-size: 16px;
-    textarea{
-        width: 40vw;
-        height: 10vh;
-        
-    }
+.salvarDeletar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
-.barraVertical{
-    width: 0.1vw;
-    border: solid #CBD4E1 1px;
-    height: 20vh;
-
-}
-.grupo2{
-    width: 50vw;
-    height: 20vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    font-family: Inter;
-    padding-right: 2rem;
-       
+.buttonSalvar,
+.buttonDeletar {
+  min-height: 40px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
 }
 
-.inputData{
-    width: 8vw;
+.buttonSalvar {
+  flex: 1;
+  background-color: #001a3d;
+  color: #ffffff;
+  padding: 0 1rem;
 
-        
-}
-
-.despesas{
-    width: 10vw;  
-    
-       
-}
-
-.custo{
-    width: 28vw;
-}
-
-.inputOrdem{
-    width: 3vw;
-}
-
-.inputDiv{
-    width: 3vw;
-}
-
-.inputPep{
-    width: 3vw;
-}
-
-.inputMoeda{
-    width: 4vw;
-}
-
-.inputDistanciaKm{
-    width: 4vw;
-}
-
-.inputValorKm{
-    width: 5vw;
-}
-
-.inputFaturamento{
-    width: 6vw;
-}
-
-.inputDespesa{
-    width: 6vw;
-}
-
-.salvarDeletar{
-    width: 10vw;
-    height: 2vh;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    font-family: Inter;
-    padding-left: 2rem;
-
-}
-
-.buttonSalvar{
-    background-color: #001a3d;    
-    width: 5vw;
-    height: 4vh;
-    border-radius: 6px;
-    justify-content: space-between;
-     
-
-    h2{
-    color: #ffffff;  
-    font-size: 16px;
-    
-    }
-   
-}
-
-.buttonDeletar{
-    background-color: #00bedd;   
-    width: 3vw;
-    height: 4vh;
-    border-radius: 6px;
-    font-family: Inter;
-}
-
-table{
-    margin-top: 1rem;
-    width: 94vw;  
-    height: 56vh;    
-    border-collapse: collapse;    
-    border-radius: 6px; 
-    overflow: hidden; 
+  h2 {
+    margin: 0;
+    font-size: 0.95rem;
   }
-  thead{    
-    height: 5vh;   
-
-  }
-
-th{
-    background-color: #CBD4E1; 
-
 }
 
-td, th, tr{
+.buttonDeletar {
+  width: 44px;
+  background-color: #00bedd;
+}
 
-    border: 0.8px solid #b4b8be;    
-    color: #23282F;
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 1rem;
-    padding-left: 0.5rem;
-    overflow-wrap: break-word;
-    }
+.mainSolicitacao table {
+  width: 100%;
+  min-width: 1180px;
+  border-collapse: collapse;
+  border-radius: 6px;
+  overflow: hidden;
+}
 
-.espacoTable{
-        height: 40vh;
-    }
+.mainSolicitacao thead {
+  min-height: 48px;
+}
 
-tfoot{        
-        padding-top: 1rem;
-        padding-bottom: 2rem;              
-        gap: 0.5rem;
-        position: absolute;
-        padding-left: 70rem;
-        
-        .divRodape{
-            display: flex;
-            width: 35vw;           
-            align-items: center;
-            justify-content: space-between;
-            font-family: Inter;                
-        }
-                      
-    }
+.mainSolicitacao th {
+  background-color: #cbd4e1;
+}
 
-    .inputTotalFaturado{
-        width: 6vw;
-        height: 7vh;
-    }
+.mainSolicitacao td,
+.mainSolicitacao th {
+  border: 1px solid #b4b8be;
+  color: #23282f;
+  font-weight: 400;
+  font-size: 0.9rem;
+  padding: 0.65rem;
+  text-align: left;
+  vertical-align: middle;
+}
 
-    .inputTotalDespesa{
-        width: 6vw;
-        height: 7vh;
-    }
+.mainSolicitacao td button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
 
-    .buttonCheck {
-        background-color: #001a3d;
-        width: 10vw;
-        height: 5vh;
-        display: flex;                  
-        align-items: center;            
-        justify-content: center;        
-        color: #ffffff;
-        font-family: Inter;        
-        font-size: 10px;
-        gap: 0.5rem;                       
-             
-        img {
-          width: 1vw;                  
-                     
-        }
-    }
+.espacoTable {
+  height: 120px;
+}
 
-    .buttonCancelar {
-        background-color: #A60B2F;
-        width: 10vw;
-        height: 5vh;
-        display: flex;                  
-        align-items: center;            
-        justify-content: center;        
-        color: #ffffff;
-        font-family: Inter;        
-        font-size: 10px;
-        gap: 0.5rem;
-    }        
+.divRodape {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
 
+.inputTotalFaturado,
+.inputTotalDespesa {
+  width: 140px;
+}
 
+.buttonCheck,
+.buttonCancelar {
+  min-height: 44px;
+  border: 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.8rem;
+  padding: 0 1rem;
+  cursor: pointer;
+}
 
+.buttonCheck {
+  background-color: #001a3d;
+  gap: 0.5rem;
 
+  img {
+    width: 18px;
+  }
+}
 
+.buttonCancelar {
+  background-color: #a60b2f;
+}
 
+@media (max-width: 1100px) {
+  .formSolicitacao {
+    grid-template-columns: 1fr;
+  }
 
+  .barraVertical {
+    display: none;
+  }
+}
 
+@media (max-width: 768px) {
+  .headerSolicitacao,
+  .mainSolicitacao {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .grupo1,
+  .grupo2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .inputNome,
+  .inputEmpresa,
+  .inputPrestacao,
+  .inputMotivo,
+  .inputData,
+  .despesas,
+  .custo,
+  .inputOrdem,
+  .inputDiv,
+  .inputPep,
+  .inputMoeda,
+  .inputDistanciaKm,
+  .inputValorKm,
+  .inputFaturamento,
+  .inputDespesa,
+  .salvarDeletar {
+    grid-column: span 1;
+  }
+
+  .inputMotivo,
+  .custo,
+  .salvarDeletar {
+    grid-column: 1 / -1;
+  }
+
+  .divRodape {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .grupo1,
+  .grupo2 {
+    grid-template-columns: 1fr;
+  }
+
+  .inputNome,
+  .inputEmpresa,
+  .inputPrestacao,
+  .inputMotivo,
+  .inputData,
+  .despesas,
+  .custo,
+  .inputOrdem,
+  .inputDiv,
+  .inputPep,
+  .inputMoeda,
+  .inputDistanciaKm,
+  .inputValorKm,
+  .inputFaturamento,
+  .inputDespesa,
+  .salvarDeletar {
+    grid-column: 1;
+  }
+
+  .inputTotalFaturado,
+  .inputTotalDespesa,
+  .buttonCheck,
+  .buttonCancelar {
+    width: 100%;
+  }
+}
