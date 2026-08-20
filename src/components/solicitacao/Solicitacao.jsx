@@ -129,6 +129,21 @@ function Solicitacao() {
     setMensagem("Formulário limpo.");
   };
 
+  const enviarParaAnalise = () => {
+    if (solicitacoes.length === 0) {
+      setMensagem("Adicione ao menos uma solicitação antes de enviar para análise.");
+      return;
+    }
+
+    setMensagem(`${solicitacoes.length} solicitação(ões) enviada(s) para análise nesta demonstração.`);
+  };
+
+  const cancelarSolicitacao = () => {
+    setFormulario(formularioInicial);
+    setSolicitacoes(solicitacoesIniciais);
+    setMensagem("Alterações canceladas e dados demonstrativos restaurados.");
+  };
+
   const totalFaturado = useMemo(
     () =>
       solicitacoes.reduce(
@@ -189,6 +204,8 @@ function Solicitacao() {
           <ResumoSolicitacao
             totalFaturado={totalFaturado}
             totalDespesa={totalDespesa}
+            onEnviar={enviarParaAnalise}
+            onCancelar={cancelarSolicitacao}
           />
         </main>
       </div>

@@ -12,13 +12,22 @@ import Fechar from "../../assets/Header/imagem-fechar-header.png";
 function NavBar() {
   const navigate = useNavigate();
   const [recolhida, setRecolhida] = useState(false);
+  const [mensagem, setMensagem] = useState("");
 
   const informarFuncionalidadeDemonstrativa = (funcionalidade) => {
-    window.alert(`${funcionalidade} ainda não está disponível nesta versão demonstrativa.`);
+    setMensagem(`${funcionalidade} ainda não está disponível nesta versão demonstrativa.`);
   };
 
   return (
-    <nav className={`${styles.navBarEstilo} ${recolhida ? styles.navBarRecolhida : ""}`}>
+    <nav
+      className={`${styles.navBarEstilo} ${recolhida ? styles.navBarRecolhida : ""}`}
+      aria-label="Navegação principal"
+    >
+      {mensagem && (
+        <p className={styles.mensagemNavegacao} role="status" aria-live="polite">
+          {mensagem}
+        </p>
+      )}
       <button
         type="button"
         onClick={() => setRecolhida((estadoAtual) => !estadoAtual)}

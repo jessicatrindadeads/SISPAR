@@ -1,4 +1,5 @@
 .navBarEstilo {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -52,6 +53,24 @@
   .buttonSair {
     background-color: #63758d;
   }
+}
+
+.mensagemNavegacao {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  z-index: 20;
+  width: min(90vw, 520px);
+  transform: translateX(-50%);
+  border: 1px solid #b8c8df;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #0844c4;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 8px 24px rgba(35, 40, 47, 0.16);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .navBarRecolhida {

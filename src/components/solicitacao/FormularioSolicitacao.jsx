@@ -1,17 +1,19 @@
 import Deletar from "../../assets/Solicitacao/deletar.png";
+import PropTypes from "prop-types";
 import styles from "./Solicitacao.module.scss";
 
 function FormularioSolicitacao({ formulario, onChange, onSubmit, onLimpar }) {
   return (
     <form className={styles.formSolicitacao} onSubmit={onSubmit} noValidate>
+      <p className={styles.avisoObrigatorios}>Campos marcados com * são obrigatórios.</p>
       <div className={styles.grupo1}>
         <div className={styles.inputNome}>
-          <label htmlFor="nome">Nome Completo</label>
+          <label htmlFor="nome">Nome Completo *</label>
           <input type="text" id="nome" name="nome" value={formulario.nome} onChange={onChange} required />
         </div>
 
         <div className={styles.inputEmpresa}>
-          <label htmlFor="empresa">Empresa</label>
+          <label htmlFor="empresa">Empresa *</label>
           <input type="text" id="empresa" name="empresa" value={formulario.empresa} onChange={onChange} required />
         </div>
 
@@ -30,12 +32,12 @@ function FormularioSolicitacao({ formulario, onChange, onSubmit, onLimpar }) {
 
       <div className={styles.grupo2}>
         <div className={styles.inputData}>
-          <label htmlFor="data">Data</label>
+          <label htmlFor="data">Data *</label>
           <input type="date" id="data" name="data" value={formulario.data} onChange={onChange} required />
         </div>
 
         <div className={styles.despesas}>
-          <label htmlFor="tipoDespesa">Tipo de Despesa</label>
+          <label htmlFor="tipoDespesa">Tipo de Despesa *</label>
           <select name="tipoDespesa" id="tipoDespesa" value={formulario.tipoDespesa} onChange={onChange} required>
             <option value="" disabled>Selecionar</option>
             <option value="Alimentação">Alimentação</option>
@@ -49,7 +51,7 @@ function FormularioSolicitacao({ formulario, onChange, onSubmit, onLimpar }) {
         </div>
 
         <div className={styles.custo}>
-          <label htmlFor="centroCusto">Centro de custo</label>
+          <label htmlFor="centroCusto">Centro de custo *</label>
           <select name="centroCusto" id="centroCusto" value={formulario.centroCusto} onChange={onChange} required>
             <option value="" disabled>Selecionar</option>
             <option value="1100109002 - FIN CONTROLES INTERNOS MTZ">1100109002 - FIN CONTROLES INTERNOS MTZ</option>
@@ -99,7 +101,7 @@ function FormularioSolicitacao({ formulario, onChange, onSubmit, onLimpar }) {
         </div>
 
         <div className={styles.salvarDeletar}>
-          <button type="submit" className={styles.buttonSalvar}><h2>+ Salvar</h2></button>
+          <button type="submit" className={styles.buttonSalvar}><span>+ Salvar</span></button>
           <button type="button" className={styles.buttonDeletar} onClick={onLimpar} aria-label="Limpar formulário">
             <img src={Deletar} alt="" aria-hidden="true" />
           </button>
@@ -110,3 +112,26 @@ function FormularioSolicitacao({ formulario, onChange, onSubmit, onLimpar }) {
 }
 
 export default FormularioSolicitacao;
+
+FormularioSolicitacao.propTypes = {
+  formulario: PropTypes.shape({
+    nome: PropTypes.string,
+    empresa: PropTypes.string,
+    prestacao: PropTypes.string,
+    motivo: PropTypes.string,
+    data: PropTypes.string,
+    tipoDespesa: PropTypes.string,
+    centroCusto: PropTypes.string,
+    ordemInterna: PropTypes.string,
+    divisao: PropTypes.string,
+    pep: PropTypes.string,
+    moeda: PropTypes.string,
+    distanciaKm: PropTypes.string,
+    valorKm: PropTypes.string,
+    valorFaturado: PropTypes.string,
+    despesa: PropTypes.string,
+  }).isRequired,
+  onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  onLimpar: PropTypes.func.isRequired,
+};

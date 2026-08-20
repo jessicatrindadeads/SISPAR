@@ -47,6 +47,14 @@
     font-size: 1rem;
     text-align: center;
   }
+
+  .avisoDemonstracao {
+    width: min(100%, 360px);
+    color: #52647a;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
 }
 
 .formLogin {
