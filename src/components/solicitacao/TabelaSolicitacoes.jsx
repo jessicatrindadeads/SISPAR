@@ -1,13 +1,15 @@
 import Lixeira from "../../assets/Solicitacao/lixeira.png";
 import Motivo from "../../assets/Solicitacao/motivo.png";
+import PropTypes from "prop-types";
 
 function TabelaSolicitacoes({ solicitacoes, onExcluir, formatarData }) {
   return (
     <table>
+      <caption className="sr-only">Solicitações de reembolso cadastradas</caption>
       <thead>
         <tr>
-          <th></th>
-          <th>Colaborador(a)</th>
+          <th scope="col">Ações</th>
+          <th scope="col">Colaborador(a)</th>
           <th>Empresa</th>
           <th>Nº Prest.</th>
           <th>Data</th>
@@ -55,3 +57,28 @@ function TabelaSolicitacoes({ solicitacoes, onExcluir, formatarData }) {
 }
 
 export default TabelaSolicitacoes;
+
+TabelaSolicitacoes.propTypes = {
+  solicitacoes: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      nome: PropTypes.string.isRequired,
+      empresa: PropTypes.string.isRequired,
+      prestacao: PropTypes.string,
+      data: PropTypes.string,
+      motivo: PropTypes.string,
+      tipoDespesa: PropTypes.string,
+      centroCusto: PropTypes.string,
+      ordemInterna: PropTypes.string,
+      divisao: PropTypes.string,
+      pep: PropTypes.string,
+      moeda: PropTypes.string,
+      distanciaKm: PropTypes.string,
+      valorKm: PropTypes.string,
+      valorFaturado: PropTypes.string,
+      despesa: PropTypes.string,
+    })
+  ).isRequired,
+  onExcluir: PropTypes.func.isRequired,
+  formatarData: PropTypes.func.isRequired,
+};

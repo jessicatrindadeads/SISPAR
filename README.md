@@ -1,131 +1,84 @@
 # SISPAR
 
-Interface web desenvolvida para simular um **sistema corporativo de solicitação e acompanhamento de reembolsos**.
+Interface front-end para simular um sistema corporativo de solicitação e acompanhamento de reembolsos.
 
-O projeto foi desenvolvido com foco em **React, componentização, navegação entre páginas, organização de estilos com SCSS Modules e responsividade**.
+[![CI](https://github.com/jessicatrindadeads/SISPAR/actions/workflows/ci.yml/badge.svg)](https://github.com/jessicatrindadeads/SISPAR/actions/workflows/ci.yml)
+[![Deploy](https://img.shields.io/badge/Deploy-Vercel-000000?logo=vercel)](https://sispar-jet.vercel.app)
 
-> Este repositório representa, atualmente, a camada **front-end** da aplicação. Os dados iniciais exibidos são demonstrativos, e esta versão não possui autenticação nem persistência de dados no back-end.
+## Demonstração
 
----
+Acesse: [sispar-jet.vercel.app](https://sispar-jet.vercel.app)
 
-## 🚀 Funcionalidades
+O login é demonstrativo: informe qualquer e-mail em formato válido e uma senha para acessar. Esta versão não possui autenticação, back-end ou persistência de dados.
 
-- Tela de login com formulário controlado e validação básica
-- Validação de e-mail antes do acesso ao dashboard
-- Dashboard de reembolsos
-- Indicadores visuais de solicitações
-- Tela de solicitação de reembolso
-- Formulário controlado com React
-- Inclusão dinâmica de novas solicitações na tabela
-- Exclusão de solicitações
-- Cálculo automático do total faturado e do total de despesas
-- Validação dos principais campos obrigatórios
-- Mensagens de feedback para ações do formulário
+## Funcionalidades
+
+- Login demonstrativo com formulário controlado e validação
+- Dashboard com indicadores de solicitações
 - Navegação entre páginas com React Router
-- Estrutura organizada em componentes
-- Recursos básicos de acessibilidade com labels e atributos ARIA
+- Cadastro e exclusão de solicitações de reembolso
+- Cálculo automático dos totais faturado e de despesas
+- Validação de campos obrigatórios
+- Confirmações acessíveis para as ações da interface
+- Envio e cancelamento demonstrativos
+- Barra lateral recolhível
+- Página para rotas não encontradas
+- Layout responsivo para desktop, tablet e mobile
 
----
-
-## 🛠️ Tecnologias
+## Tecnologias
 
 - React
 - JavaScript
-- React Router DOM
-- Sass / SCSS Modules
-- HTML5
-- CSS3
+- React Router
+- Sass e SCSS Modules
 - Vite
-- Git
-- GitHub
+- ESLint
+- GitHub Actions
+- Vercel
 
----
+## Como executar
 
-## 📂 Estrutura do projeto
+Pré-requisitos: Node.js 22 ou superior e npm.
 
 ```bash
+git clone https://github.com/jessicatrindadeads/SISPAR.git
+cd SISPAR
+npm install
+npm run dev
+```
+
+## Validação
+
+```bash
+npm run lint
+npm run build
+npm run preview
+```
+
+O fluxo de integração contínua executa lint e build em pull requests e atualizações da branch principal.
+
+## Estrutura
+
+```text
 src/
 ├── assets/
 ├── components/
 │   ├── login/
 │   ├── navbar/
+│   ├── pagina-nao-encontrada/
 │   ├── reembolsos/
 │   └── solicitacao/
-│       ├── FormularioSolicitacao.jsx
-│       ├── ResumoSolicitacao.jsx
-│       ├── Solicitacao.jsx
-│       ├── Solicitacao.module.scss
-│       └── TabelaSolicitacoes.jsx
 ├── App.jsx
 ├── global.scss
 └── main.jsx
 ```
 
----
+## Escopo
 
-## ▶️ Como executar
+O SISPAR é um projeto educacional de front-end. Os dados, indicadores e solicitações exibidos são fictícios e permanecem apenas durante a sessão no navegador.
 
-Clone o repositório:
+## Autora
 
-```bash
-git clone https://github.com/jessicatrindadeads/SISPAR.git
-```
+Desenvolvido por [Jéssica Trindade](https://github.com/jessicatrindadeads).
 
-Acesse a pasta do projeto:
-
-```bash
-cd SISPAR
-```
-
-Instale as dependências:
-
-```bash
-npm install
-```
-
-Execute o projeto em ambiente de desenvolvimento:
-
-```bash
-npm run dev
-```
-
----
-
-## 📌 Status do projeto
-
-Projeto **front-end** funcional e em evolução.
-
-### Próximas melhorias planejadas
-
-- Revisão da responsividade
-- Refinamento visual das mensagens de feedback
-- Testes da interface e dos principais fluxos
-- Deploy da aplicação
-
----
-
-## 💡 Aprendizados
-
-Durante o desenvolvimento deste projeto, foram praticados conceitos de:
-
-- Componentização em React
-- Gerenciamento de estado com `useState`
-- Derivação de valores com `useMemo`
-- Manipulação de formulários controlados
-- Validação de formulários
-- Renderização condicional
-- Renderização dinâmica de listas
-- Comunicação entre componentes por props
-- Navegação com React Router
-- Estilização com SCSS Modules
-- Acessibilidade básica em formulários
-- Estruturação de interfaces corporativas
-- Versionamento com Git e GitHub
-
----
-
-## 👩‍💻 Autora
-
-Desenvolvido por **Jessica Trindade**.
-
-[LinkedIn](https://www.linkedin.com/in/jessicatrindadeads/) • [GitHub](https://github.com/jessicatrindadeads)
+[LinkedIn](https://www.linkedin.com/in/jessicatrindadeads/)

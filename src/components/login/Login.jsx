@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Capa from "../../assets/TelaLogin/imagemcapa.png";
+import Capa from "../../assets/TelaLogin/imagemcapa.webp";
 import Logo from "../../assets/TelaLogin/logo-ws.png";
 import styles from "./Login.module.scss";
 
@@ -47,6 +47,9 @@ function Login() {
         <img src={Logo} alt="Logo da Wilson Sons" />
         <h1>Boas-vindas ao Novo Portal SISPAR</h1>
         <p>Sistema de Emissão de Boletos e Parcelamentos</p>
+        <p className={styles.avisoDemonstracao}>
+          Demonstração: use qualquer e-mail válido e uma senha para acessar.
+        </p>
 
         <form className={styles.formLogin} onSubmit={entrar} noValidate>
           <label htmlFor="email">E-mail</label>

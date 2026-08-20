@@ -39,6 +39,12 @@
   align-items: start;
 }
 
+.avisoObrigatorios {
+  grid-column: 1 / -1;
+  color: #52647a;
+  font-size: 0.85rem;
+}
+
 .grupo1,
 .grupo2 {
   display: grid;
@@ -124,9 +130,10 @@
   color: #ffffff;
   padding: 0 1rem;
 
-  h2 {
+  span {
     margin: 0;
     font-size: 0.95rem;
+    font-weight: 700;
   }
 }
 
